@@ -6,5 +6,6 @@ for i in string:
         d[i] +=1
     else:
         d[i] = 1
+print(d)
 for i,j in d.items():
     print('{}{}'.format(i,j),end='')
