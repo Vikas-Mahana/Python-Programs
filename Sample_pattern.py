@@ -64,3 +64,23 @@ def pattern(n):
 # Best way is to ask input and store it in a variable
 # and pass that variable to the function
 pattern(int(input("Enter a number = ")))
+
+
+"""
+create  a function to print tht below pattern
+
+1 3 6 8 11 13 16 18 21 23
+"""
+
+def pattern(num: int):
+    i = 1
+    j = 1
+    while i<= num:
+        print(j, end=" ")
+        if i % 2 == 0:
+            j += 3
+        else:
+            j +=2
+        i+=1
+
+pattern(10)
