@@ -7,14 +7,14 @@ from PIL import Image
 first_arg = sys.argv[1]
 
 parent_dir = os.path.dirname(first_arg)
-second_arg = "C"
+second_arg = "New"
 
-# Full path of C inside A
+# Full path of New inside first_arg
 second_arg_path = os.path.join(parent_dir, second_arg)
 
-# Check if C exists
+# Check if New exists
 if os.path.isdir(second_arg_path):
-    print("Folder C already exists.")
+    print("Folder New already exists.")
 else:
     os.mkdir(second_arg_path)
-    print("Folder C created successfully.")
+    print("Folder New created successfully.")
