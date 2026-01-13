@@ -6,21 +6,18 @@ from pathlib import Path
 from PIL import Image
 
 first_arg = sys.argv[1]
-folder_path = Path('D:\Python-Programs\old_images')
-
-parent_dir = os.path.dirname(first_arg)
-second_arg = "New"
-
-# Full path of New inside first_arg
-second_arg_path = os.path.join(parent_dir, second_arg)
+second_arg = sys.argv[2]
 
 # Check if New exists
-if os.path.isdir(second_arg_path):
-    print("Folder New already exists.")
-else:
-    os.mkdir(second_arg_path)
-    print("Folder New created successfully.")
+if not os.path.exists(second_arg):
+    os.mkdir(second_arg)
 
-for img in folder_path.iterdir():
-    image = Image.open(img)
+for img in os.listdir(first_arg):
+    image = Image.open(f'{first_arg}{img}')
     print(image)
+    png_name = os.path.splitext(img)[0] + ".png"
+    png_path = os.path.join(second_arg, png_name)
+
+    # Save as PNG in New
+    image.save(png_path, "PNG")
+
